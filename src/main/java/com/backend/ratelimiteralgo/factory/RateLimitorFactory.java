@@ -12,6 +12,7 @@ public class RateLimitorFactory {
             case "userslidingwindow" -> new UserSlidingWindow(clientId);
             case "fixedwindowcounter" -> new UserFixedWindow(clientId);
             case "slidingwindowcounter" -> new UserSlidingWindowCounter(clientId);
+            case "leakybucket" -> new UserLeakyBucket(clientId);
             case "tokenbucket" -> new UserTokenBucket(clientId);
             default -> new UserSlidingWindow(clientId);
         };
